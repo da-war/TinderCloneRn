@@ -5,11 +5,14 @@ import tailwind from 'twrnc';
 
 import {NavigationContainer} from '@react-navigation/native';
 import StackNavigator from './app/navigation/StackNavigator';
+import {AuthProvider} from './app/hooks/useAuth';
 
 const App = () => {
   return (
     <NavigationContainer>
-      <StackNavigator />
+      <AuthProvider>
+        <StackNavigator />
+      </AuthProvider>
     </NavigationContainer>
   );
 };
